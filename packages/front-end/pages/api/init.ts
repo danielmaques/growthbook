@@ -93,8 +93,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const body: EnvironmentInitValue = {
-    appOrigin: APP_ORIGIN || "http://localhost:3000",
-    apiHost: API_HOST || "http://localhost:3100",
+    appOrigin: APP_ORIGIN || "https://growthbook-production-bd26.up.railway.app/",
+    apiHost: API_HOST || "https://growthbook-production-bd26.up.railway.app:3100",
     s3domain:
       S3_DOMAIN || (S3_BUCKET ? `https://${S3_BUCKET}.s3.amazonaws.com/` : ""),
     gcsDomain:
