@@ -7,6 +7,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongodata:/data/db
+      
   growthbook:
     image: "growthbook/growthbook:latest"
     ports:
@@ -16,8 +17,12 @@ services:
       - mongo
     environment:
       - MONGODB_URI=mongodb://root:password@mongo:27017/growthbook?authSource=admin
+      # Substitua pelo seu domínio
+      - APP_ORIGIN=https://growthbook-production-bd26.up.railway.app/
+      - API_HOST=https://growthbook-production-bd26.up.railway.app/:3100
     volumes:
       - uploads:/usr/local/src/app/packages/back-end/uploads
+      
 volumes:
   uploads:
   mongodata:
